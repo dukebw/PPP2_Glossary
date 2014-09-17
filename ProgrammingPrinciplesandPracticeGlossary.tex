@@ -1,0 +1,983 @@
+% Use only LaTeX2e, calling the article.cls class and 12-point type.
+
+\documentclass[12pt]{article}
+
+% Users of the {thebibliography} environment or BibTeX should use the
+% scicite.sty package, downloadable from *Science* at
+% www.sciencemag.org/about/authors/prep/TeX_help/ .
+% This package should properly format in-text
+% reference calls and reference-list numbers.
+
+\usepackage{scicite}
+
+% Use times if you have the font installed; otherwise, comment out the
+% following line.
+
+\usepackage{times}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage[T1]{fontenc}
+\usepackage[section]{placeins}
+
+% The preamble here sets up a lot of new/revised commands and
+% environments.  It's annoying, but please do *not* try to strip these
+% out into a separate .sty file (which could lead to the loss of some
+% information when we convert the file to other formats).  Instead, keep
+% them in the preamble of your main LaTeX source file.
+
+
+% The following parameters seem to provide a reasonable page setup.
+
+\topmargin 0.0cm
+\oddsidemargin 0.2cm
+\textwidth 16cm 
+\textheight 21cm
+\footskip 1.0cm
+
+
+%The next command sets up an environment for the abstract to your paper.
+
+\newenvironment{sciabstract}{%
+\begin{quote} \bf}
+{\end{quote}}
+
+
+% If your reference list includes text notes as well as references,
+% include the following line; otherwise, comment it out.
+
+\renewcommand\refname{References and Notes}
+
+% The following lines set up an environment for the last note in the
+% reference list, which commonly includes acknowledgments of funding,
+% help, etc.  It's intended for users of BibTeX or the {thebibliography}
+% environment.  Users who are hand-coding their references at the end
+% using a list environment such as {enumerate} can simply add another
+% item at the end, and it will be numbered automatically.
+
+\newcounter{lastnote}
+\newenvironment{scilastnote}{%
+\setcounter{lastnote}{\value{enumiv}}%
+\addtocounter{lastnote}{+1}%
+\begin{list}%
+{\arabic{lastnote}.}
+{\setlength{\leftmargin}{.22in}}
+{\setlength{\labelsep}{.5em}}}
+{\end{list}}
+
+
+% Include your paper's title here
+
+\title{Programming Principles and Practice Using C++ - Glossary of Terms} 
+
+
+% Place the author information here.  Please hand-code the contact
+% information and notecalls; do *not* use \footnote commands.  Let the
+% author contact information appear immediately below the author names
+% as shown.  We would also prefer that you don't change the type-size
+% settings shown here.
+
+\author
+{Brendan Duke 0770590\\
+\\
+\normalsize{$^{1}$Department of Physics and Astronomy, McMaster University,}\\
+\\
+\normalsize{$^\ast$To whom correspondence should be addressed; E-mail:  dukebw@mcmaster.ca.}
+}
+
+% Include the date command, but leave its argument blank.
+
+\date{\today}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
+
+
+
+\begin{document} 
+
+% Double-space the manuscript.
+
+\baselineskip16pt
+
+% Make the title.
+
+\maketitle 
+
+
+
+% Place your abstract within the special {sciabstract} environment.
+
+
+
+
+
+% In setting up this template for *Science* papers, we've used both
+% the \section* command and the \paragraph* command for topical
+% divisions.  Which you use will of course depend on the type of paper
+% you're writing.  Review Articles tend to have displayed headings, for
+% which \section* is more appropriate; Research Articles, when they have
+% formal topical divisions at all, tend to signal them with bold text
+% that runs into the paragraph, for which \paragraph* is the right
+% choice.  Either way, use the asterisk (*) modifier, as shown, to
+% suppress numbering.
+
+\section*{Chapter 2}
+
+\begin{itemize}
+\item \textbf{//} $\equiv$ A comment.
+
+\item << $\equiv$ The output operator.
+
+\item C++ $\equiv$ a programming language based on C, which is capable of taking high-level code understandable by a programmer and translating it into machine code for the computer to process.
+
+\item Comment $\equiv$ a line of code that the compiler will ignore, and which has the purpose of explaining the code to human readers.
+
+\item Compiler $\equiv$ a piece of software that converts source code, the language of C++, into machine code readable by computers.
+
+\item Compile-time error $\equiv$ an error that occurs during compiling and is detected by the compiler.
+
+\item \textbf{cout} $\equiv$ instruction to print an input statement to a standard output stream. "Character \textbf{out}put stream".
+
+\item Executable $\equiv$ a program that can be run by the computer directly.
+
+\item Function $\equiv$ A named set of directions for the computer to execute in the order in which they're written. E.g. \textbf{main()} is a function
+
+\item Header $\equiv$ a library of definitions of terms to be used by the compiler.
+
+\item IDE $\equiv$ Interactive Development Environment; a text editor for code that has colour coding and debugging utilities, and a compiler and linker.
+
+\item \textbf{\#include} $\equiv$ an instruction to make available facilities from a specific file. E.g. the standard I/O facilities may be made available.
+
+\item Library $\equiv$ a set of code accessed using declarations found in an \textbf{\#include}d file.
+
+\item Linker $\equiv$ links a set of separate object file parts (translation units) together into one executable file to be run by the computer. E.g. linking standard library files and the "Hello, World!" program.
+
+\item \textbf{main()} $\equiv$ the function containing the main body of the program; this is where the computer starts executing instructions of a program.
+
+\item Object code $\equiv$ Code in the form of machine code to be read by the computer.
+
+\item Output $\equiv$ a type of information, e.g. an integer or a string, to be output by the program to the computer.
+
+\item Program $\equiv$ a list of directions to be read and executed by a computer. E.g. the "Hello, World!" code written is a program.
+
+\item Source code $\equiv$ the code written in a high-level language, e.g. written in C++, which can be converted into machine code and thus give the computer a set of instructions to execute. This is what you read and write.
+
+\item Statement $\equiv$ a single line of code ending in a semi-colon or right curly bracket, e.g. cout << "Hello, World!\textbackslash n";. These are the actions that a function is to perform. This is any action that is not an \textbf{\#include} directive.
+
+\section*{Chapter 3}
+
+\item Assignment $\equiv$ setting the value of a variable in the computer's memory, this is represented by "=".
+
+\item \textbf{cin} $\equiv$ instruction to read in an input.
+
+\item Concatenation $\equiv$ adding two things together, e.g. concatenating "cat" and "dog" to "catdog".
+
+\item Conversion $\equiv$ changing from one type to another, e.g. from int to double.
+
+\item Declaration $\equiv$ naming an object.
+
+\item Decrement $\equiv$ stuff = stuff-1.
+
+\item Definition $\equiv$ Introduces a new name into a program and sets aside memory for an object. A definition can and should assign an initial value. E.g. int count=0.
+
+\item Increment $\equiv$ stuff = stuff+1.
+
+\item Initialization $\equiv$ giving a variable its initial value, e.g. int count=0;.
+
+\item Name $\equiv$ what a variable is called, e.g. "count" of int count=0;.
+
+\item Narrowing $\equiv$ during conversion going from a type that has a large size to a type with a small size and hence losing information. E.g. char c = a, where a is an integer equal to 20000.
+
+\item Object $\equiv$ A set of bits in memory with a type that stores information.
+
+\item Operation $\equiv$ applying a set of rules to a given variable, e.g. multiplying 2 by itself is 2*2 and the operation is multiplication.
+
+\item Operator $\equiv$ the character or string that invokes an operation, e.g. "*" of the multiplication 2*2.
+
+\item Type $\equiv$ a size in bits of the information to be stored in memory and the associated rule for the meaning of those bits (the object), e.g. char, int, double, bool.
+
+\item Type safety $\equiv$ keeping every object defined and used within its type, and not defining a type of smaller size in terms of one of larger size.
+
+\item Value $\equiv$ the 1s and 0s stored in bits in memory and interpreted according to a type.
+
+\item Variable $\equiv$ a named object.
+
+\section*{Chapter 4}
+
+\item Abstraction $\equiv$ a description of how a program works in plain language, which is usually much shorter than the corresponding precise code.
+
+\item \textbf{begin()} $\equiv$ member function that returns the beginning index and element of a vector.
+
+\item Computation $\equiv$ alteration of an inputted value based on a set of rules, e.g. multiplying an inputted floating point value by two.
+
+\item Conditional statement $\equiv$ a statement that is only executed if certain conditions are met, e.g. if(a==b) cout << a << " equals " << b << endl;.
+
+\item Divide and Conquer $\equiv$ iteratively splitting a problem into smaller problems until they are tackle-able one at a time.
+
+\item \textbf{else} $\equiv$ in the circumstance that none of the preceding conditions are met, do the following statements, e.g. else return x;.
+
+\item \textbf{end()} $\equiv$ member function that refers to the last index and element of a vector.
+
+\item Expression $\equiv$ performs a computation on a value.
+
+\item \textbf{for}-statement $\equiv$ e.g. for(int i=0; i<100; ++i) will execute a statement 100 times as i goes from 0 to 99.
+
+\item Function $\equiv$ a set of statements that takes in an input variable and returns an output, e.g. square(x) returns the square of x.
+
+\item lvalue $\equiv$ object named by the left-hand operand of an assignment; the object being assigned a value, e.g. \textbf{length} of \textbf{length=12;}.
+
+\item Member function $\equiv$ a function that acts on a vector and must be called using dot notation, e.g. size() of vector.size().
+
+\item \textbf{push\_back()} $\equiv$ a function that increases the size of the given vector by one and puts the thing in () at the end.
+
+\item Selection $\equiv$ a choice based on comparison of a value against several constants, e.g. using \textbf{switch} with \textbf{case}s.
+
+\item \textbf{size()} $\equiv$ returns the size of a vector; member function.
+
+\item \textbf{sort()} $\equiv$ standard library function for sorting a vector.
+
+\item \textbf{switch}-statement $\equiv$ divvies up cases based on whether a given character, integer or enumeration is equal to a number of different constant values.
+
+\item \textbf{vector} $\equiv$ n by 1 array.
+
+\section*{Chapter 5}
+
+\item Argument error $\equiv$ error due to incorrect input to the argument of a function.
+
+\item Assertion $\equiv$ e.g. a==b. True/false statement. A statement that states (asserts) an invariant.
+
+\item \textbf{catch} $\equiv$ function that defines what to do with a \textbf{throw}n error. Specifies what to do if the called code used \textbf{throw}.
+
+\item Compile-time error $\equiv$ error, e.g. syntax error, that is caught by the compiler.
+
+\item Container $\equiv$ e.g. a vector; set of bits in memory used to store data (elements).
+
+\item Debugging $\equiv$ act of finding bugs/errors (undesirable parts) in a program.
+
+\item Error $\equiv$ when a program does what it's not supposed to do/doesn't work.
+
+\item Exception $\equiv$ definition of occurrence that causes a \textbf{throw}. It is what is \textbf{throw}n when a function finds an error that it cannot handle.
+
+\item Invariant $\equiv$ statement that should always be true, e.g. speed < speed\_of\_light.
+
+\item Link-time error $\equiv$ error that occurs during linking of modules of a program.
+
+\item Logic error $\equiv$ when a program produces undesirable results that are not caught by the compiler or during linking. Logic errors must be caught by the programmer.
+
+\item Post-condition $\equiv$ condition that must be met after an operation is performed, e.g. area >= 0.
+
+\item Pre-condition $\equiv$ condition that must be met before an operation is performed, e.g.
+
+\begin{lstlisting}
+if(length <= 0 || width <=0) error("...");
+\end{lstlisting}
+
+\item Range error $\equiv$ trying to write to a place in memory that is not reserved for a container, e.g. trying to write to v[v.size()] for a vector v.
+
+\item Requirement $\equiv$ of a function; often called a pre-condition. It must be true for the function to perform its action correctly.
+
+\item Run-time error $\equiv$ errors that aren't caught by the compiler or during linking.
+
+\item Syntax error $\equiv$ error due to language in the program that is not part of C++, e.g. Cout << "Hello, world!" << endl;
+
+\item Testing $\equiv$ the act of trying different inputs to a program to look for bugs.
+
+\item \textbf{throw} $\equiv$ ending a \textbf{try} block upon a certain condition, and being caught by a \textbf{catch} block or ending the program.
+
+\item Type error $\equiv$ trying to give the wrong type as input to a function, e.g. trying to input a string "Success!" to a function whose inputs are defined as integers.
+
+
+\section*{Chapter 6}
+
+
+\item Analysis $\equiv$ deciding what the problem, inputs and outputs are. "What should be done". A set of requirements, or a specification.
+
+\item \textbf{class} $\equiv$ user-defined type.
+
+\item Class member $\equiv$ member function of a \textbf{class}. Declared inside the class definition; defined outside.
+
+\item Data member $\equiv$ member function of data?.
+
+\item Design $\equiv$ set of solutions to a problem, using the given inputs and outputs. Overall structure for the system: which parts the implementation should have and how those parts communicate. Decide which tools, e.g. libraries, help you structure the program.
+
+\item Divide by zero $\equiv$ self-evident.
+
+\item Grammar $\equiv$ a set of rules with which to group a set of inputs into sub-groups. Defines the syntax of our input.
+
+\item Implementation $\equiv$ actual code made with the design. Write the code, debug it and test that it actually does what it is supposed to do.
+
+\item Interface $\equiv$ way users interact with a \textbf{class}.
+
+\item Member function $\equiv$ function that is defined within a class (type).
+
+\item Parser $\equiv$ a program that reads a stream of tokens according to a grammar.
+
+\item \textbf{private} $\equiv$ implementation of a \textbf{class}, which is not alterable by the user.
+
+\item Prototype $\equiv$ first version of a project, may be simplified.
+
+\item Pseudo code $\equiv$ steps of a code written in plain language.
+
+\item \textbf{public} $\equiv$ user-interface of a \textbf{class}.
+
+\item Syntax analyzer $\equiv$ see parser. A program that reads a stream of tokens according to a grammar.
+
+\item Token $\equiv$ user-defined type with a set of bits for \textbf{char} and a set of bits for \textbf{double}. A sequence of characters that represents something we consider a unit, such as a number or operator.
+
+\item Use case $\equiv$ set of examples that a program should be able to solve.
+
+\section*{Chapter 7}
+
+\item Code layout $\equiv$ the order of a code and its splitting into functions. Also, the way the code is presented in the program: how the lines are spaced, and how statements and parts of statements are separated on each line. E.g. the code layout of,
+
+\begin{lstlisting}
+switch(ch){
+case 'q':case';':case'%':case'(':case')':case'+':case'-':case'*':case'/':
+	return Token(ch);	// let each character represent itself
+\end{lstlisting}
+
+could be better represented using one line per case and adding a couple comments. E.g.,
+
+\begin{lstlisting}
+Token Token_stream:: get() 
+	// read characters from cin and compose a Token 
+{ 
+	if (full) { // check if we already have a Token ready 
+		full=false; 
+		return buffer; 
+	} 
+	char ch; 
+	cin >> ch;	// note that » skips whitespace (space, newline, tab, etc.) 
+	switch (ch) { 
+	case quit: 
+	case print: 
+	case '(': 
+	case ')': 
+	case '+': 
+	case '-': 
+	case '*': 
+	case '/': 
+	case '%': 
+		return Token(ch); // lei each character represent itself 
+	case '•': // a floating-point-literal can start with a dot 
+	case '0': case '1': case '2': case '3': case '4': 
+	case '5': case '6': case '7': case '8': case '9': //numeric literal 
+	{ 	cin.putback(ch); //put digit back into the input stream 
+		double val; 
+		cin >> val; // read a floating-point number 
+		return Token(number,val); 
+	}
+	default:
+		error("Bad token"); 
+	} 
+} 
+
+\end{lstlisting}
+
+\item Commenting $\equiv$ Non-code parts for the programmer to see that express intention and explain parts of the code that aren't better explained in code.
+
+\item Error handling $\equiv$ detection and actions taken upon detection of errors in a program. Trying to feed a program input in the hope of getting it to misbehave. "I'll break it! I'm smarter than any program - even my own!" attitude.
+
+\item Feature creep $\equiv$ the tendency to want to add many features. A tendency to add extra functionality to a program "just in case".
+
+\item Maintenance $\equiv$ Keeping a code updated and working after it has been tested to a stable version.
+
+\item Recovery $\equiv$ after a program detects an error, its switching back to perform its main function.
+
+\item Revision history $\equiv$ a log of all the changes made to a program over time. Contains indications of what corrections and improvements were made.
+
+\item Scaffolding $\equiv$ structure of a program: how it is split into functions and which functions call which other functions. E.g. start the program, end the program, and handle "fatal" errors. \# includes etc.
+
+\item Symbolic constant $\equiv$ E.g. defining,
+
+\begin{lstlisting}
+const char number = '8';
+\end{lstlisting}
+
+avoids the use of "magic constants". A symbolic name for the constant used to represent something (e.g. a number).
+
+\item Testing $\equiv$ trying good and bad inputs on a program in order to try to make it crash, and hence find bugs. Breaking programs. E.g. Bjarne Stroupstrup fed e-mail reporting compiling errors straight to the compiler (when testing compilers).
+
+\section*{Chapter 8}
+
+\item Activation record $\equiv$ A data structure that is a detailed layout of each function. A function's parameters, local variables and implementation are stored in memory when the function is called.
+
+\item Argument $\equiv$ a value passed to a function or a template, in which it is accessed through a parameter.
+
+\item Argument passing $\equiv$ process by which an argument is parameterized for use by a function. E.g. pass-by-value, pass-by-reference and pass-by-\textbf{const}-reference.
+
+\item Call stack $\equiv$ A data structure that grows and shrinks at one end according to the rule: first in, first out. A sequence of instructions in the memory that are destroyed in a last-in-first-out order.
+
+\item Class scope $\equiv$ The area of text within a class. The scope for which a given class is defined and usable.
+
+\item \textbf{const} $\equiv$ a command associated with an object by the compiler stating that it cannot be re-written to. (Constant: a value that cannot be changed (in a given scope); not mutable.)
+
+\item \textbf{constexpr} $\equiv$ \textbf{constexpr} functions are functions that are evaluated by the compiler. A \textbf{constexpr} function can be evaluated by the compiler if it is given constant expressions as arguments. A \textbf{constexpr} function behaves just like an ordinary function until you use it where a constant is needed; then, it is calculated at compile time provided its arguments are constant expressions (and gives an error if they are not). A \textbf{constexpr} function must be so simple that in C++11 it must have a body that consists of a single return statement; in C++14, we can also write simple loops. A \textbf{constexpr} function may not change the values of variables outside its own body, except those it is assigned to or uses to initialize.
+
+\item Declaration $\equiv$ A statement that introduces a name into a scope. A declaration could be specifying a type for what it is named (e.g., a variable or a function.) Or, a declaration could optionally be specifying an initializer (e.g., an initializer value or a function body). Naming of a variable, function or class.
+
+\item Definition $\equiv$ A declaration that also fully specifies the entity declared. Naming of a variable, function or class and setting aside memory for it. A definition gives the implementation of a function, assigns a value to a variable and gives the implementation of a class.
+
+\item \textbf{extern} $\equiv$ Extern plus no initializer means "not definition. It is rarely useful. It is recommended that you don't use it, but you'll see it in other people's code, especially code that uses too many global variables.
+
+\item Forward declaration $\equiv$ a declaration that is not a definition, declared before its definition in order that it can be used recursively.
+
+\item Function $\equiv$ A named unit of code that can be invoked (called) from different parts of a program; a logical unit of computation. A set of variables and statements.
+
+\item Function definition $\equiv$ the body of a function - contains statements and variables used within the function.
+
+\item Global scope $\equiv$ The scope that's not nested within any other, or the area of text outside any other scope. The scope that all other scopes are nested within.
+
+\item Header file $\equiv$ A collection of declarations, typically defined in a file (hence a header is also called a \textit{header file}). A file containing declarations and definitions that can be \textbf{\#include}d in other files.
+
+\item Initializer $\equiv$ An initializer value or function body. What a variable is set to when it is defined. An objects first (initial) value.
+
+\item Local scope $\equiv$ Between \{...\} braces of a block or in a function argument list. The scope within a block - set by brackets \{\}.
+
+\item \textbf{namespace} $\equiv$ The language mechanism for organizing classes, functions, data and types into an identifiable and named part of a program without defining a type. A place for defining and declaring functions, classes and variables that does not have a type.
+
+\item Namespace scope $\equiv$ A named scope nested in the global scope or in another namespace. The code within a \textbf{namespace} for which its declared functions, variables and classes apply.
+
+\item Nested block $\equiv$ blocks within functions and other blocks, e.g.
+
+\begin{lstlisting}
+{
+	// ...
+	{
+		// ...
+	}
+}
+\end{lstlisting}
+
+\item Parameter $\equiv$ A declaration of an explicit input to a function or a template. When called, a function can access the arguments passed through the names of its parameters. Formal arguments. Argument passed to a function.
+
+\item Pass-by-\textbf{const}-reference $\equiv$ an argument to a function that is a reference to an object, i.e. points to the object itself, and that object is not allowed by the compiler to be altered by the function referencing it.
+
+\item Pass-by-reference $\equiv$ passing an argument to a function that is a reference to an object, i.e. points to an object's location in memory.
+
+\item Pass-by-value $\equiv$ A copy of an object is made for use within the scope of the function being passed to.
+
+\item Recursion $\equiv$ when a function, directly or indirectly, calls itself.
+
+\item \textbf{return} $\equiv$ When a function returns, its activation record is no longer used. Signifies where a function deletes all its implementation, local variables etc. that it built up on the stack.
+
+\item Return value $\equiv$ the value a function puts on the stack when it \textbf{return}s.
+
+\item Scope $\equiv$ A scope is a region of program text. A name is declared in a scope and is valid (is "in scope") from the point of its declaration until the end of the scope in which it was declared. E.g.
+
+\begin{lstlisting}
+void f()
+{
+	g();	// error: g() isn't (yet) in scope
+}
+
+void g()
+{
+	f();	// OK: f() is in scope
+}
+
+void h()
+{
+	int x=y;	// error: y isn't (yet) in scope
+	int y=x;	// OK: x is in scope
+	g();		// OK: g() is in scope
+}
+\end{lstlisting}
+
+Functions within which variables, classes, function etc. definitions apply.
+
+\item Statement scope $\equiv$ the scope within a statement, e.g.
+
+\begin{lstlisting}
+for(int i=0; i<v.size()-1; ++i){
+	v[i] += v[i+1];
+}
+\end{lstlisting}
+
+"i" is defined within the brackets of this \textbf{for} statement only.
+
+\item Technicalities $\equiv$ specific details of a language that don't give much over-arching programming understanding.
+
+\item Undeclared identifier $\equiv$ Compilers will give an error for "undeclared identifiers", since they are not declared anywhere in a given program fragment. A name used that hasn't been declared.
+
+\item \textbf{using} declaration $\equiv$ E.g. the constructs,
+
+\begin{lstlisting}
+using std::string;	// string means std::string
+using std::cout;	// cout means std::cout
+//...
+\end{lstlisting}
+
+the programming equivalent to using plain "Greg" to refer to Greg Hansen, when there are no other Gregs in the room.
+
+\item \textbf{using} directive $\equiv$ E.g.
+
+\begin{lstlisting}
+using namespace std;	// make names from std directly accessible
+\end{lstlisting}
+
+For the names from a namespace: "If you don't find a declaration for a name in this scope, look in \textbf{std}."
+
+\section*{Chapter 9}
+
+\item built-in types $\equiv$ Types that the compiler already knows how to set aside memory (an object) for, and the definitions of the allowed operations on said default types (also whether they're allowed, e.g. + and *) without being told by declarations supplied by a programmer in source code.
+
+\item \textbf{Class} $\equiv$ A user-defined type. Members are private by default. Classes may contain data members, function members and member types.
+
+\item \textbf{const} $\equiv$ \textbf{const} declares that an object (?) can't be altered. Used to define symbolic constants.
+
+\item constructor $\equiv$ code that specifies initialization of an object of a type. A member function with the same name as its class. It is an error - caught by the compiler - to forget to initialize an object of a class that has a constructor that requires an argument.
+
+\item destructor $\equiv$ an operation that is implicitly invoked (called) when an object is destroyed (e.g., at the end of a scope). Often, it releases resources
+
+\item \textbf{enum} $\equiv$ A used-defined type that specifies its values (its enumerators) as symbolic constants. The "body" of an enumeration is simply a list of enumerators. For an \textbf{enum class}, the enumerators are in the scope of the enumeration. If you leave it to the compiler to specify values, it'll give each enumerator the value of the previous enumerator plus one (starting with zero if unspecified).
+
+\item enumeration $\equiv$ See \textbf{enum}.
+
+\item enumerator $\equiv$ See \textbf{enum}.
+
+\item helper function $\equiv$ A function, possibly in a namespace of related functions, that provides some functionality to a Class and is not a member function of that class. Helper functions often take arguments of the classes that they are helpers of. "Helper function" is a design concept.
+
+\item implementation $\equiv$ Hidden from the rest of the program outside its Class, a Class' implementation "implements" that class. (\textbf{private:}). The implementer's view of the class.
+
+\item in-class initializer $\equiv$ An initializer for a class member that is specified as part of the member declaration. E.g.,
+
+\begin{lstlisting}
+class Date {
+public:
+	//...
+	Date();			// default constructor
+	Date(year, Month), day);
+	Date(int y);	// January 1 of year y
+	// ...
+private:
+	int y {2001};
+	Month m {Month::jan};
+	int d {1};
+};
+\end{lstlisting}
+
+\item inlining $\equiv$ if a function is \textbf{inline}, the compiler will try to generate code for the function at each point of call rather than using function-call instructions to use common code. This can be a significant performance advantage for functions, such as \textbf{month()}, which hardly do anything and are used a lot. Writing the definition of a member function within the class definition makes the function \textbf{inline}.
+
+\item interface $\equiv$ The \textbf{public:} part of a \textbf{class}, which is used by and visible to the user. The user accesses the implementation of a class only indirectly through the interface.
+
+\item invariant $\equiv$ A rule for what constitutes a valid value, e.g. a \textbf{Date} must lie in the past, present or future. Something that must be always true at a given point (or points) of a program; typically used to describe the state (set of values) of an object or the state of a loop before entry into the repeated statement.
+
+\item representation $\equiv$ A type "knows" how to represent the data needed in an object.
+
+\item \textbf{struct} $\equiv$ A class for which the default members are public. \textbf{struct}s are primarily used for data structures where the members can take any value; that is we can't define any meaningful invariant.
+
+\item structure $\equiv$ A data structure, e.g. data members in a \textbf{class}.
+
+\item user-defined type $\equiv$ Inherently obvious.
+
+\item valid state $\equiv$ See invariant. E.g. the allowed months, years and days of a \textbf{Date}.
+
+\section*{Chapter 10}
+
+\item \textbf{bad()} $\equiv$ stream state that indicates that the stream has suffered an error that is unlikely to be recoverable from. Something unexpected and serious happened (e.g., a disk read error).
+
+\item buffer $\equiv$ holds values as they are inputted to an input stream, or outputted from an output stream. A data structure that the \textbf{ostream} uses internally to store the data you give it while communicating with the operating system.
+
+\item \textbf{clear()} $\equiv$ member function of a stream state that resets its state to \textbf{good()}. \textbf{clear()} explicitly takes a stream out of the \textbf{fail()} state.
+
+\item \textbf{close()} $\equiv$ member function of I/O streams that closes a file. 
+
+\item Device driver $\equiv$ provides a software interface to hardware devices, enabling an operating system to use hardware functions without knowing the precise details of the hardware being used.
+
+\item \textbf{eof()} $\equiv$ stream state indicating that the end of file has been reached.
+
+\item \textbf{fail()} $\equiv$ stream state indicating that an error has occurred, which is likely recoverable from. Something unexpected happened (e.g., we looked for a digit and found 'x').
+
+\item File $\equiv$ a numbered sequence of bytes. A container of permanent information in a computer.
+
+\item \textbf{good()} $\equiv$ stream state indicating that the stream is good; the operations succeeded.
+
+\item \textbf{ifstream} $\equiv$ input-file stream. An \textbf{ifstream} is an \textbf{istream} for reading from a file.
+
+\item Input device $\equiv$ a device that produces input (e.g. a keyboard).
+
+\item Input operator $\equiv$ "get-from": 
+
+\begin{lstlisting}
+>>
+\end{lstlisting}
+
+can be defined for user-defined types. 
+
+\item \textbf{iostream} $\equiv$ A stream used for both input and output.
+
+\item \textbf{istream} $\equiv$ stream used for input. An \textbf{istream} turns character sequences into values of various types, and gets those characters from somewhere (such as a console, a file, the main memory or another computer).
+
+\item \textbf{ofstream} $\equiv$ an \textbf{ostream} that is used to write to files.
+
+\item \textbf{open()} $\equiv$ member function of a stream used for opening a file.
+
+\item \textbf{ostream} $\equiv$ stream used for output. An \textbf{ostream} turns values of various types into character sequences, and and sends those character sequences "somewhere" (such as to a console, a file, the main memory or another computer).
+
+\item \textbf{output device} $\equiv$ a device used for output, e.g. a monitor or a text window.
+
+\item \textbf{output operator} $\equiv$ "put-to":
+
+\begin{lstlisting}
+<<
+\end{lstlisting}
+
+\item Stream state $\equiv$ consists of four possible cases: \textbf{good()}, \textbf{bad()}, \textbf{eof()} and \textbf{fail()}, as defined above.
+
+\item Structured file $\equiv$ A file with some sort of format, such as the temperature format \{year 1992 \{month jan (1 0 61.5)\}\}.
+
+\item Terminator $\equiv$ Character that indicates that reading of a file should stop.
+
+\item \textbf{unget()} $\equiv$ puts the last character to be taken out of the input stream back into the input stream. A shorter version of \textbf{putback()}, which relies on the stream remembering which character it last produced so that you don't have to mention it.
+
+\section*{Chapter 11}
+
+\item Binary $\equiv$ sets of 1s and 0s used to store information on a computer. A set of bit values are in binary.
+
+\item Character classification $\equiv$ e.g. classifying a character as alphanumeric, a digit, punctuation, etc.
+
+\item Decimal $\equiv$ base-10 number representation.
+
+\item \textbf{defaultfloat} $\equiv$ The 6-digit precision default number-representation setting, which chooses to use \textbf{scientific} or \textbf{fixed} based on which is more accurate (within the precision of \textbf{defaultfloat}).
+
+\item File positioning $\equiv$ Where the cursor is in a file, i.e. which byte number will be written to or read from next. Every file open for reading has a "read/get position", and every file open for writing has a "write/put position". \textbf{seekg()} and \textbf{seekp()} increment the reading and writing positions, respectively.
+
+\item \textbf{fixed} $\equiv$ manipulator that specifies that the output is to have 6 digits of precision after the decimal.
+
+\item Hexadecimal $\equiv$ base-16.
+
+\item Irregularity $\equiv$ not treating all input sources as equivalent. Regularity would imply imposing a single standard on the way to treat objects entering and exiting the system.
+
+\item Line-oriented input $\equiv$ processing of input that is done by taking one line at a time using \textbf{getline}, instead of breaking input up with whitespace.
+
+\item Manipulator $\equiv$ a command that gives get-from or put-to operators some kind of setting, e.g. \textbf{std::hex} or \textbf{std::left}. Terms that are used to change the behaviour of a stream.
+
+\item Nonstandard separator $\equiv$ using something besides whitespace as a separator, e.g. punctuation ".;:" etc.
+
+\item \textbf{noshowbase} $\equiv$ manipulator that tells an output stream not to show the base of octal and hexadecimal numbers, e.g. 0x (or 0X) or 0 are emitted in front of the number.
+
+\item Octal $\equiv$ base-8 notation.
+
+\item Output formatting $\equiv$ e.g. precision of outputted floating point numbers.
+
+\item Regularity $\equiv$ see irregularity.
+
+\item \textbf{scientific} $\equiv$ manipulator that makes floating-point numbers output with a mantissa in [0:10), and with six digits of precision after the mantissa.
+
+\item \textbf{setprecision()} $\equiv$ sets the precision of a floating-point number.
+
+\item \textbf{showbase} $\equiv$ shows the base of hex and octal numbers in output, e.g. 02322 or 0x4d2.
+
+\section*{Chapter 12}
+
+\item Color $\equiv$ e.g. red. A class in the graphics library used.
+
+\item Coordinates $\equiv$ a set of numbers specifying points in space (of some number of dimensions).
+
+\item Display $\equiv$ a display model is the output part of GUI.
+
+\item Fill color $\equiv$ Fill a Shape with a Color.
+
+\item FLTK $\equiv$ Fast Light ToolKit, pronounced "fulltick". 
+
+\item Graphics $\equiv$ visible classes (?) such as Shapes, Line, Lines, Polygons etc.
+
+\item GUI $\equiv$ Graphical User Interface. The graphical interface between a user and a program.
+
+\item GUI library $\equiv$ a program, which we can think of as the "display engine" - or "the small gnome writing on the back of the screen", which takes objects attached to a window and draws them on the screen.
+
+\item HTML $\equiv$ A layout (typesetting, "markup") language. HyperText Markup Language: the standard markup language used to create web pages.
+
+\item Image $\equiv$ e.g. a jpeg or a gif file.
+
+\item JPEG $\equiv$ a commonly used method of lossy compression for digital images. The degree of compression can be adjusted.
+
+\item Line style $\equiv$ e.g. dash, dash-dot-dot, etc.
+
+\item Software layer $\equiv$ e.g. a GUI. In object-oriented design, a layer is a set of classes that have the same set of link-time module dependencies to other modules. In the GUI program of Chapter 16, examples of layers were \textit{Our program}, \textit{Our graphics/GUI interface library}, \textit{FLTK}, \textit{The operating system graphics/GUI facilities}, and the \textit{Device driver layer}.
+
+\item Window $\equiv$ an object that other objects can be attached to and thereby displayed.
+
+\item XML $\equiv$ Extensible Markup Language: a layout (typesetting, "markup") language. Defines a set of rules for encoding documents that is both human-readable and machine-readable.
+
+\section*{Chapter 13}
+
+\item Closed shape $\equiv$ A shape whose last point is connected to its first point, and all points in between are connected.
+
+\item Color $\equiv$ e.g. red. The RGB color model is a model in which red, green and blue light are added together in various ways to produce a broad array of colors.
+
+\item Ellipse $\equiv$ $x^2/a^2+y^2/b^2=1,\;\;\;a,b\in\mathbf{P}$. $a$ and $b$ are the semi-major and semi-minor axes.
+
+\item Fill $\equiv$ to fill with color.
+
+\item Font $\equiv$ e.g. Helvetica.
+
+\item Font size $\equiv$ e.g. size 14. Height of a font in pixels.
+
+\item GIF $\equiv$ "Graphics Interchange Format": a bitmap image format that supports up to 8 bits per pixel for each image, allowing a single image to reference its own palette of up to 256 different colors chosen from the 24-bit RGB color space.
+
+\item Image $\equiv$ A file that is a set of connected pixels, e.g. a JPG or a GIF, a picture of Hurricane Rita etc.
+
+\item Image encoding $\equiv$ the method used to store an image, and also the file-extension given to that image. The object of image encoding is to reduce redundancy in image data in order to be able to store or transmit image data in an efficient form.
+
+\item Invisible $\equiv$ sets the pixels in a graphic to transparent.
+
+\item Line $\equiv$ defined by two points, or $y = mx+b$.
+
+\item Open shape $\equiv$ a shape for which any two consecutive points are not connected.
+
+\item Point $\equiv$ defined by $x$ and $y$ pixels; a single pixel on the screen.
+
+\item Polygon $\equiv$ a \textbf{Closed\_polyline} for which no two lines intersect.
+
+\item Polyline $\equiv$ A set of lines for which each subsequent line has a point that is shared with the previous line.
+
+\item Unnamed object $\equiv$ an object for which space is set aside in the heap ("free store"), and for which there is no name to reference it.
+
+\item \textbf{Vector\_ref} $\equiv$ a container for collections of objects of different types. A \textbf{vector} type that can hold both named and unnamed objects. It is used much like a standard library \textbf{vector}.
+
+\item Visible $\equiv$ pixels that are not fully transparent. 256 values (8-bit).
+
+\section*{Chapter 14}
+
+\item Abstract class $\equiv$ a class for which objects of that class are not intended or able to be created. An abstract class can be used only as a base class; often used to define an interface to derived classes. A class is made abstract by having a pure virtual function or a protected constructor.
+
+\item Access control $\equiv$ achieved using \textbf{public:}, \textbf{private:}, and \textbf{protected:}, access control determines which functions can access member functions and data of a class.
+
+\item Base class $\equiv$ a class from which other classes are derived, whose member functions and data are often passed on to the derived classes. A class used as the base of a class hierarchy. Typically a base class has one or more virtual functions.
+
+\item Derived class $\equiv$ a class that gets the member functions of its base class, declared using,
+
+\begin{lstlisting}
+struct Derived : Base {
+	// ...
+};
+\end{lstlisting}
+
+\item Dispatch $\equiv$ run-time polymorphism, dynamic dispatch or run-time dispatch. The ability to define a function in a base class and have a function of the same name and type in a derived class called when a user calls the base class function. E.g. when \textbf{Window} calls \textbf{draw\_lines} for a \textbf{Shape} that is a \textbf{Circle}, it is the \textbf{Circle}'s \textbf{draw\_lines} that is executed rather than \textbf{Shape}'s own \textbf{draw\_lines}.
+
+\item Encapsulation $\equiv$ hiding data members using access control such as \textbf{private:} and \textbf{protected:}.
+
+\item Inheritance $\equiv$ Derived classes getting their member functions and \textbf{public:} data members from their base classes. A.k.a. derivation: a way to build one class from another so that the new class can be used in place of the original. E.g., \textbf{Circle} is a kind of \textbf{Shape}.
+
+\item Mutability $\equiv$ changeability; the opposite of immutable, constant and variable. We try to ensure that the state of an object is only mutable by its own class.
+
+\item Object layout $\equiv$ how the data members and member function information are laid out in an object. Members of a class define the layout of objects: data members are stored one after another in memory. When inheritance is used, data members of a derived class are added after those of a base.
+
+\item Object-oriented override $\equiv$ overriding \textbf{virtual} functions of base classes with same-named functions of derived classes. Declared with \textbf{override}.
+
+\item Polymorphism $\equiv$ See dispatch.
+
+\item \textbf{private} $\equiv$ data or functions only available to member functions of a class.
+
+\item \textbf{protected} $\equiv$ data or functions available to member functions of a class and of its derived classes.
+
+\item \textbf{public} $\equiv$ data or functions that can be used by any function.
+
+\item Pure virtual function $\equiv$ a function of a base class that makes that class abstract, and that must be overridden by a same-named function in a derived class for that class to be made concrete.
+
+\item Subclass $\equiv$ derived class.
+
+\item Superclass $\equiv$ base class.
+
+\item Virtual function $\equiv$ a function in a base class that is to be overridden in its derived classes. The ability to define a function in a base class and have a function of the same name and type in a derived class when a user calls the base class function. See dispatch.
+
+\item Virtual function call $\equiv$ a call of a virtual function, which is handled using a piece of data in a derived class that tells which function is really invoked by that virtual function call (a function of some class in the class hierarchy is invoked). This is done using an address to a virtual function table or \textbf{vtbl}, which is a table of functions. The \textbf{vtbl}'s address is often called the \textbf{vptr} (for "virtual pointer").
+
+\item Virtual function table $\equiv$ see virtual function call.
+
+\section*{Chapter 15}
+
+\item Approximation $\equiv$ estimation of an exact value, e.g. by approximating $e^x$ with a truncated Taylor series.
+
+\item Default argument $\equiv$ of a function, a value that an argument will take if that argument is not provided, e.g. \textbf{xscale} and \textbf{yscale} in the constructor for \textbf{Function},
+
+\begin{lstlisting}
+	struct Function : Shape {
+	// the function parameters are not stored
+		Function(Fct f, double r1, double r2, Point orig,
+			int count = 100, double xscale = 25, double yscale = 25);
+	};
+\end{lstlisting}
+
+Default arguments are initializers given to contructor arguments in their declaration.
+
+\item Function $\equiv$ a rule for transforming a set (the domain) into another set (the range). Each \textbf{Function} specifies how its first argument (a function of one \textbf{double} argument returning a \textbf{double}) is to be drawn in a window. 
+
+\item Lambda $\equiv$ a way of passing a function as an argument to another function, wthout declaring the function to be passed earlier in the code. C++ offers a notation for defining something that acts as a function in the argument position where it is needed. E.g.,
+
+\begin{lstlisting}
+Function s5{[](double x){ return cos(x) + slope(x); }, r_min,
+	r_max, orig, 400, 30, 30};
+\end{lstlisting}
+
+\item Scaling $\equiv$ multiplying all values in a set by a constant to achieve some purpose, such as making a set of data fit on a pair of axes of a certain size.
+
+\item Screen layout $\equiv$ the way all different objects are laid out on the screen. E.g., how a pair of axes is offset from the top, bottom and sides of the screen etc.
+
+\section*{Chapter 16}
+
+\item Button $\equiv$ a GUI object on the screen to be clicked by the mouse, that may be linked to some action. E.g. a class in the GUI interface to FLTK that is a subclass of a \textbf{Widget}. Buttons have a "Callback" parameter.
+
+\item Callback $\equiv$ a low-level pair of addresses that is a way from getting from an action detected by device drivers from a device (e.g. a mouse-click), to a C++ function. A callback function is a function that we want the GUI system to call when it detects a click on our button.
+
+\item Console I/O $\equiv$ output taken as strings (?) from a console, e.g. a Unix terminal or the MS/DOS terminal. This is strong for technical/professional work where the input is simple and textual. The C++ standard library \textbf{iostreams} provide suitable means to display output text on the screen or store it in files.
+
+\item Control $\equiv$ a more descriptive, but less evocative, name for a widget. 
+
+\item Control inversion $\equiv$ when instead of the program following a flow controlled by the program's layout, callbacks from devices such as the mouse or keyboard control the program flow. When control of the order of execution of a program is moved to widgets, whichever widget the user activates runs. E.g., click on a button and its callback runs. When that callback returns, the program settles back, waiting for the user to do something else.
+
+\item Dialog box $\equiv$ a box with input or output text in it. A small window that communicates information to the user and prompts them for response.
+
+\item GUI $\equiv$ Graphical User Interface. A GUI allows a user to interact with a program by pressing buttons, selecting from menus, entering data in various ways, and displaying textual and graphical entities on a screen.
+
+\item Menu $\equiv$ a subclass of a \textbf{Widget} that has multiple \textbf{Buttons} attached to it, all of which may have callbacks to different functions in the program.
+
+\item User interface $\equiv$ an interface between the user and a computer program, e.g. windows and buttons that can be clicked by the mouse, and dialog boxes that can have text input or output to/from them. The user interface on a small gadget may be limited to input from a couple of push-buttons and output to an LED. Other computers are connected to the outside world only by a wire.
+
+\item Visible/hidden $\equiv$ Drawn on the screen or not. \textbf{show()} and \textbf{hide()} member functions control visibility for \textbf{Widgets}.
+
+\item Waiting for input $\equiv$ when the program is in a \textbf{while();} state awaiting callbacks from different widgets in order to decide which functions to run. In the GUI example of Chapter 16, \textbf{while(wait());} tells the system to look out for widgets and invoke the appropriate callbacks.
+
+\item Wait loop $\equiv$ see explanation of \textbf{while(wait());} above.
+
+\item Widget $\equiv$ a mother class for different objects, such as \textbf{Buttons}, that can invoke callbacks to functions within the program from GUI system-level device inputs. A \textbf{Widget} is a GUI entity for which a callback is triggered. For each action on a \textbf{Widget}, two functions have to be defined: one to map from the system's notion of a callback and one to do our desired action.
+
+
+\section*{Chapter 17}
+
+\item Address $\equiv$ the address of a memory location. Number that specifies a memory location. Can think of it as a kind of integer value.
+
+\item Allocation $\equiv$ telling the operating system to reserve some memory (from free store) at a given address to be used by your program.
+
+\item Cast $\equiv$ e.g. \textbf{const\_cast} casts away const-ness or \textbf{reinterpret\_cast} casts away the type of a value or pointer, or \textbf{static\_cast} explicitly converts between pointer types. Explicit type conversion.
+
+\item Container $\equiv$ e.g. a \textbf{std::vector}: an object that holds other objects.
+
+\item Contents of: \textbf{*} $\equiv$ dereference operator: says to return the value of the object pointed to by a pointer.
+
+\item Deallocation $\equiv$ telling the operating system to "free up" previously allocated memory.
+
+\item \textbf{delete} $\equiv$ De-allocate a single object pointed to by a pointer.
+
+\item \textbf{delete[]} $\equiv$ De-allocate an array of objects pointed to by a pointer.
+
+\item Dereference $\equiv$ See contents of: \textbf{*}.
+
+\item Destructor $\equiv$ Function that is automatically called when an object goes out of scope; does the opposite of a constructcor. A destructor (should) make sure that any memory allocated by the object is de-allocated when it goes out of scope.
+
+\item Free store $\equiv$ memory that is not used by the code, for static storage, or for the stack. Also known as the heap.
+
+\item Link $\equiv$ an object that has at least one pointer to another object. E.g. with a double-link we can get to its successor with a \textbf{succ} pointer and to its predecessor (in the list) with a \textbf{prev} pointer.
+
+\item Member access: \textbf{->} $\equiv$ like the dot \textbf{.} notation for object names: used to access members of the object pointed to by a pointer.
+
+\item Member destructor $\equiv$ destructor of the member of an object. Destructors are called in the following order for a derived class: first the destructor of that object's class is called, then its member destructors are called in the reverse order in which they were declared in its class structure. Then the destructors of the derived class's base classes are called in reverse order. I.e. if \textbf{C1} derives from \textbf{B1}, and \textbf{B1} derives from \textbf{A1}, \textbf{C1}'s constructor is called, then all of \textbf{C1}'s member destructors are called, then \textbf{B1}'s destructor is called, all \textbf{B1}'s member destructors are called, then \textbf{C1}'s destructor is called, etc.  
+
+\item Memory $\equiv$ space for storing bits in the hardware. Made up of code, static storage, free store and the stack.
+
+\item Memory leak $\equiv$ when, e.g., memory is allocated at an address pointed to by a pointer and then that pointer is made to point to a different address without first deallocating that memory.
+
+\item \textbf{new} $\equiv$ tells the OS to allocate memory on the heap..
+
+\item Null pointer $\equiv$ a pointer that doesn't point to any address, aka \textbf{NULL} or \textbf{0} or \textbf{nullptr}.
+
+\item \textbf{nullptr} $\equiv$ see Null pointer.
+
+\item Pointer $\equiv$ a type that contains a memory address, which can be no memory address (\textbf{nullptr}). Arithmetic can be done on pointers, and a pointer can be changed to point somewhere else (unless it has been declared \textbf{const}).
+
+\item Range $\equiv$ e.g. of an array. The memory allocated to a container; any memory beyond that allocation is out of range.
+
+\item Resource leak $\equiv$ see memory leak.
+
+\item Subscripting $\equiv$ e.g. \textbf{a[n]} of an array \textbf{a} will refer to the \textbf{n}th object of type \textbf{a[0]} starting from the address pointed to by \text{a[0]}.
+
+\item Subscript \textbf{[]} $\equiv$ see subscripting.
+
+\item \textbf{this} $\equiv$ points to the current object, e.g. in a member function,
+
+\begin{lstlisting}
+Link* Link::insert(Link* n)
+{
+	if (n==nullptr) return this;
+	// ...
+}
+\end{lstlisting}
+
+\textbf{this} refers to the \textbf{Link*} for the object for which \textbf{Link::insert} is being called (i.e. the \textbf{Link} object for which \textbf{insert()} is a member).
+
+\item Type conversion $\equiv$ e.g. from \textbf{int} to \textbf{int*} (which requires a \textbf{static\_cast}.
+
+\item \textbf{virtual} destructor $\equiv$ a destructor of a base class that can be "replaced" by the destructor of its derived class. E.g. if a \textbf{Shape} that is a \textbf{Text}, and it goes out of scope, then when \textbf{~Shape()} is called, since \textbf{~Shape()} is virtual, the call invokes the destructor of \textbf{Shape}'s derived class, in this case \textbf{~Text()}.
+
+\item \textbf{void*} $\equiv$ a void pointer; a type-less pointer. Means "pointer to some memory that the compiler doesn't know the type of".
+
+\end{itemize}
+
+% Your references go at the end of the main text, and before the
+% figures.  For this document we've used BibTeX, the .bib file
+% scibib.bib, and the .bst file Science.bst.  The package scicite.sty
+% was included to format the reference numbers according to *Science*
+% style.
+
+
+
+
+
+
+
+
+
+% Following is a new environment, {scilastnote}, that's defined in the
+% preamble and that allows authors to add a reference at the end of the
+% list that's not signaled in the text; such references are used in
+% *Science* for acknowledgments of funding, help, etc.
+
+
+
+
+% For your review copy (i.e., the file you initially send in for
+% evaluation), you can use the {figure} environment and the
+% \includegraphics command to stream your figures into the text, placing
+% all figures at the end.  For the final, revised manuscript for
+% acceptance and production, however, PostScript or other graphics
+% should not be streamed into your compliled file.  Instead, set
+% captions as simple paragraphs (with a \noindent tag), setting them
+% off from the rest of the text with a \clearpage as shown  below, and
+% submit figures as separate files according to the Art Department's
+% instructions.
+
+
+\clearpage
+
+
+
+\end{document}
